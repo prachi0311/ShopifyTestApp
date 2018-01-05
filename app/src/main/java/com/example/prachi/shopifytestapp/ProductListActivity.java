@@ -38,15 +38,6 @@ public class ProductListActivity extends AppCompatActivity {
         adapter=new ProductListAdapter(this,mproductlist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
-        FloatingActionButton fab=(FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent();
-                i.setClass(ProductListActivity.this,SearchActivity.class);
-                startActivity(i);
-            }
-        });
         fetchProductList();
 
     }

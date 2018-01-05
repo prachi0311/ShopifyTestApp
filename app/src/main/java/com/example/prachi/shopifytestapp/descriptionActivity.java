@@ -37,7 +37,7 @@ public class descriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         root=(LinearLayout) findViewById(R.id.descriptionlinearlayout);
-      //  fm=(FrameLayout) findViewById(R.id.framelayout);
+
         variantproducts=new ArrayList<>();
         Intent i = getIntent();
         variantproducts=(ArrayList<variantResponse>) i.getSerializableExtra("variant_list");
@@ -51,7 +51,7 @@ public class descriptionActivity extends AppCompatActivity {
         TextView productvendor=(TextView) findViewById(R.id.productvendor);
         ImageView productimage=(ImageView) findViewById(R.id.productimage);
         productTitle.setText("PRODUCT NAME: " +title);
-      //  price.setTextColor(Color.WHITE);
+
         producttype.setText("PRODUCT TYPE: " +prodtype);
         productvendor.setText("PRODUCT VENDORS: "+vendors);
         Picasso.with(this).load(imagesrc).into(productimage);
@@ -67,11 +67,11 @@ public class descriptionActivity extends AppCompatActivity {
             prodimage=(ImageView) v.findViewById(R.id.varientimage);
             color=(TextView) v.findViewById(R.id.variantcolor);
             price.setText("PRICE: "+variantproducts.get(j).getPrice());
-          //  price.setTextColor(Color.WHITE);
+
             weight.setText("WEIGHT: "+variantproducts.get(j).getWeight());
-          //  price.setTextColor(Color.WHITE);
+
             color.setText("COLOR: "+variantproducts.get(j).getTitle());
-          //  price.setTextColor(Color.WHITE);
+
             Picasso.with(this).load(imagesrc).into(prodimage);
             root.addView(v);
     }

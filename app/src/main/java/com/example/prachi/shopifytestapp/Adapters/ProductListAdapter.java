@@ -46,15 +46,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         Picasso.with(mcontext).load(mproductList.get(position).getImages().get(0).getSrc()).into(holder.productImage);
         holder.productTitle.setText("TITLE: " +mproductList.get(position).getTitle());
         Log.i("producttitle",mproductList.get(position).getTitle());
-       // holder.productType.setText(mproductList.get(position).getProduct_type());
-       // Log.i("producttype",mproductList.get(position).getProduct_type());
         holder.productdesc.setText("DESCRIPTION : "+mproductList.get(position).getBody_html());
-       // Log.i("productvendor",mproductList.get(position).getVendor());
-//        str=mproductList.get(position).getOptions().get(0).getValues().get(0);
-//        for(int i=1;i<mproductList.get(position).getOptions().size();i++){
-//            str=str+","+mproductList.get(position).getOptions().get(0).getValues().get(i);
-//        }
-//        holder.availaibleIn.setText("COLORS: "+str);
         View.OnClickListener listner=new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,16 +73,14 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView productImage;
         TextView productTitle;
-       // TextView productType;
         TextView productdesc;
-        TextView availaibleIn;
+
         public ViewHolder(View itemView) {
             super(itemView);
             productImage=(ImageView) itemView.findViewById(R.id.product_image);
             productTitle=(TextView) itemView.findViewById(R.id.product_title);
-         //   productType=(TextView) itemView.findViewById(R.id.product_type);
             productdesc=(TextView) itemView.findViewById(R.id.product_desc);
-            //availaibleIn=(TextView) itemView.findViewById(R.id.product_availaible_in);
+
         }
     }
 }

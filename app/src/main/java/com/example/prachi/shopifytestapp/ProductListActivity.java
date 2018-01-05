@@ -1,6 +1,7 @@
 package com.example.prachi.shopifytestapp;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,6 +10,7 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.prachi.shopifytestapp.Adapters.ProductListAdapter;
 import com.example.prachi.shopifytestapp.Network.ApiClient;
@@ -36,6 +38,15 @@ public class ProductListActivity extends AppCompatActivity {
         adapter=new ProductListAdapter(this,mproductlist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
+        FloatingActionButton fab=(FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent();
+                i.setClass(ProductListActivity.this,SearchActivity.class);
+                startActivity(i);
+            }
+        });
         fetchProductList();
 
     }
@@ -60,25 +71,7 @@ public class ProductListActivity extends AppCompatActivity {
 
             }
 
-            //@Override
-            public boolean onCreateOptionsMenu(Menu menu) {
-                //  Inflate the menu; this adds items to the action bar if it is present.
-                getMenuInflater().inflate(R.menu.search_menu_item, menu);
-                MenuItem searchItem = menu.findItem(R.id.search_icon);
 
-                SearchView searchView = (SearchView) searchItem.getActionView();
-                return true;
-            }
-
-            //  @Override
-            public boolean onOptionsItemSelected(MenuItem item) {
-                if (item.getItemId() == R.id.search_icon) {
-                    Intent i = new Intent();
-                    i.setClass(ProductListActivity.this, SearchActivity.class);
-                    startActivity(i);
-                }
-                return true;
-            }
         })
     ;};
 }

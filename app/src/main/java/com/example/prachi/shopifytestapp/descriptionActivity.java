@@ -1,10 +1,12 @@
 package com.example.prachi.shopifytestapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,26 +31,29 @@ public class descriptionActivity extends AppCompatActivity {
     String prodtype;
     String imagesrc;
     LinearLayout root;
+    FrameLayout fm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         root=(LinearLayout) findViewById(R.id.descriptionlinearlayout);
+      //  fm=(FrameLayout) findViewById(R.id.framelayout);
         variantproducts=new ArrayList<>();
         Intent i = getIntent();
         variantproducts=(ArrayList<variantResponse>) i.getSerializableExtra("variant_list");
         Log.i("variantsize",String.valueOf(variantproducts.size()));
         title=i.getStringExtra("product_title");
-        vendors=i.getStringExtra("product_vendors");
+        vendors=i.getStringExtra("product_vendor");
         prodtype=i.getStringExtra("product_type");
-        imagesrc=i.getStringExtra("prouct_image");
+        imagesrc=i.getStringExtra("product_image");
         TextView productTitle=(TextView) findViewById(R.id.producttitle);
         TextView producttype=(TextView) findViewById(R.id.producttype);
         TextView productvendor=(TextView) findViewById(R.id.productvendor);
         ImageView productimage=(ImageView) findViewById(R.id.productimage);
-        productTitle.setText(title);
-        producttype.setText(prodtype);
-        productvendor.setText(vendors);
+        productTitle.setText("PRODUCT NAME: " +title);
+      //  price.setTextColor(Color.WHITE);
+        producttype.setText("PRODUCT TYPE: " +prodtype);
+        productvendor.setText("PRODUCT VENDORS: "+vendors);
         Picasso.with(this).load(imagesrc).into(productimage);
         int variantsize=variantproducts.size();
         TextView price;
@@ -56,14 +61,17 @@ public class descriptionActivity extends AppCompatActivity {
         ImageView prodimage;
         TextView color;
         for(int j=0;j<variantsize;j++){
-            View v= getLayoutInflater().inflate(R.layout.variant_item_view, root);
+            View v= getLayoutInflater().inflate(R.layout.variant_item_view, null);
             price=(TextView) v.findViewById(R.id.variantprice);
             weight=(TextView) v.findViewById(R.id.variantweight);
             prodimage=(ImageView) v.findViewById(R.id.varientimage);
             color=(TextView) v.findViewById(R.id.variantcolor);
-            price.setText(variantproducts.get(j).getPrice());
-            weight.setText(variantproducts.get(j).getWeight());
-            color.setText(variantproducts.get(j).getTitle());
+            price.setText("PRICE: "+variantproducts.get(j).getPrice());
+          //  price.setTextColor(Color.WHITE);
+            weight.setText("WEIGHT: "+variantproducts.get(j).getWeight());
+          //  price.setTextColor(Color.WHITE);
+            color.setText("COLOR: "+variantproducts.get(j).getTitle());
+          //  price.setTextColor(Color.WHITE);
             Picasso.with(this).load(imagesrc).into(prodimage);
             root.addView(v);
     }

@@ -5,20 +5,33 @@
     <ImageView
         android:id="@+id/varientimage"
         android:layout_width="0dp"
+        android:scaleType="centerCrop"
         android:layout_weight="1"
         android:layout_height="match_parent" />
     <TextView
         android:id="@+id/variantprice"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:layout_width="0dp"
         android:layout_weight="1"
+        android:gravity="center_vertical"
         android:layout_height="match_parent" />
     <TextView
         android:id="@+id/variantcolor"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent" />
     <TextView
         android:id="@+id/variantweight"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent" />

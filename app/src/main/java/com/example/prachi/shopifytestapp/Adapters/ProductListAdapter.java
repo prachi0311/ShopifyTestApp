@@ -61,8 +61,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 Intent i=new Intent();
                 i.setClass(mcontext,descriptionActivity.class);
                 i.putExtra("variant_list",mproductList.get(position).getVariants());
-                i.putExtra("Product_title",mproductList.get(position).getTitle());
-                i.putExtra("Product_vendor",mproductList.get(position).getVendor());
+                i.putExtra("product_title",mproductList.get(position).getTitle());
+                i.putExtra("product_vendor",mproductList.get(position).getVendor());
                 i.putExtra("product_type",mproductList.get(position).getProduct_type());
                 i.putExtra("product_image",mproductList.get(position).getImages().get(0).getSrc());
                 mcontext.startActivity(i);

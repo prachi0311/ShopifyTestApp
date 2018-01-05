@@ -5,4 +5,5 @@ package com.example.prachi.shopifytestapp;
  */
 
 class SearchActivity {
+
 }

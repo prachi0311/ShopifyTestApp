@@ -1,10 +1,12 @@
 package com.example.prachi.shopifytestapp.Network;
 
+import java.io.Serializable;
+
 /**
  * Created by prachi on 5/1/18.
  */
 
-public class variantResponse {
+public class variantResponse implements Serializable {
     long id;
     String price;
     String weight;

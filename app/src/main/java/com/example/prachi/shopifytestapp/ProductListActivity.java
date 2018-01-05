@@ -32,7 +32,7 @@ public class ProductListActivity extends AppCompatActivity {
         mproductlist=new ArrayList<>();
         RecyclerView recyclerView=(RecyclerView) findViewById(R.id.product_list_recyclerview);
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager= new GridLayoutManager(this,2);
+        RecyclerView.LayoutManager layoutManager= new GridLayoutManager(this,1);
         adapter=new ProductListAdapter(this,mproductlist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);

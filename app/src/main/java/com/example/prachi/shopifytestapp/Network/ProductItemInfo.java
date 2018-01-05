@@ -11,6 +11,11 @@ public class ProductItemInfo {
     String title;
     String vendor;
     String product_type;
+    String body_html;
+
+    public String getBody_html() {
+        return body_html;
+    }
 
     ArrayList<variantResponse> variants=new ArrayList<>();
     ArrayList<optionResponse> options=new ArrayList<>();

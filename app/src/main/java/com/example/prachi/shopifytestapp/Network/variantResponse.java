@@ -5,13 +5,13 @@ package com.example.prachi.shopifytestapp.Network;
  */
 
 public class variantResponse {
-    int id;
+    long id;
     String price;
     String weight;
     String weight_unit;
     String title;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

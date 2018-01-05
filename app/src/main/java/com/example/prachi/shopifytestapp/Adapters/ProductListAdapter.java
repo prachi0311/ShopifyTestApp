@@ -2,6 +2,7 @@ package com.example.prachi.shopifytestapp.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public ProductListAdapter(Context context, ArrayList<ProductItemInfo> productList){
          this.mcontext=context;
         this.mproductList=productList;
+        Log.i("listsize",String.valueOf(mproductList.size()));
     }
 
     @Override
@@ -40,8 +42,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         Picasso.with(mcontext).load(mproductList.get(position).getImages().get(0).getSrc()).into(holder.productImage);
         holder.productTitle.setText(mproductList.get(position).getTitle());
+        Log.i("producttitle",mproductList.get(position).getTitle());
         holder.productType.setText(mproductList.get(position).getProduct_type());
+        Log.i("producttype",mproductList.get(position).getProduct_type());
         holder.productVendor.setText(mproductList.get(position).getVendor());
+        Log.i("productvendor",mproductList.get(position).getVendor());
         holder.availaibleIn.setText(mproductList.get(position).getOptions().get(0).getValues().get(0));
     }
 

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 public class ProductListResponse {
 
-    ArrayList<ProductItemInfo> result=new ArrayList<>();
+    ArrayList<ProductItemInfo> products=new ArrayList<>();
 
-    public ArrayList<ProductItemInfo> getResult() {
-        return result;
+    public ArrayList<ProductItemInfo> getProducts() {
+        return products;
     }
 
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class ProductItemInfo {
-    int id;
+    long id;
     String title;
     String vendor;
     String product_type;
@@ -18,7 +18,7 @@ public class ProductItemInfo {
 
 
     ArrayList<imageResponse> images=new ArrayList<>();
-    public int getId() {
+    public long getId() {
         return id;
     }
 

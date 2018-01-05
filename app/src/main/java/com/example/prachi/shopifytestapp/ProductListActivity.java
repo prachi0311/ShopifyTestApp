@@ -48,15 +48,15 @@ public class ProductListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     mproductlist.clear();
                     ProductListResponse body = response.body();
-                    mproductlist.addAll(body.getResult());
-                      Log.i("response",response.toString());
+                    mproductlist.addAll(body.getProducts());
+                      Log.i("response",String.valueOf(mproductlist.size()));
                     adapter.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void onFailure(Call<ProductListResponse> call, Throwable t) {
-                Log.i("failure","failureoccured");
+                Log.i("failure",t.toString());
 
             }
 
